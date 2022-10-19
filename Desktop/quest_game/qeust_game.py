@@ -60,8 +60,9 @@ class Magician(Hero):
         
     def ability(self):
         ...   
+print(tor.greeting())
 
-
+print(tor.greeting())
 
 tanos = Warrior("tanos",14, 5)
 tor = Magician("tor",10, 11)
