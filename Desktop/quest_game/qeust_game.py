@@ -56,10 +56,48 @@ class Magician(Hero):
         super().__init__(name,power,armor)
         self.hp = 100
         self.start_armor = armor
-        self.tag = 'Враг'
+        self.tag = 'Маг'
         
+    def ability(self): 
+        chance = random.randint(1,100)
+        if chance > 50:
+            print("Способность использована успешно. Вы увеличили своё ХП")
+            self.hp += 2
+        else:
+            print("Способность использована неудачно. Вы уменьшили своё ХП")
+            self.hp -= 1
+class tank(Hero):
+    def __init__(self, name,power,armor):
+        super().__init__(name,power,armor)
+        self.hp = 100
+        self.start_armor = armor
+        self.tag = 'Танк'
+        def ability(self):
+            chance = random.randint(1,100)
+            if chance > 50:
+                print("Способность использована успешно. Вы увеличили свой урон")
+                self.armor += 4
+            else:
+                print("Способность использована неудачно. Вы уменьшили свой урон")
+                self.hp -= 2
+
+class Asassin(Hero):
+    def __init__(self, name,power,armor,plyer,enemy):
+        super().__init__(name,power,armor)
+        self.hp = 100
+        self.start_armor = armor
+        self.tag = 'Танк'
     def ability(self):
-        ...   
+            chance = random.randint(1,100)
+            if chance > 50:
+                print("Способность использована успешно. Вы атаковали с удвоеным уроном.")
+                self.power*=random.randint(2,3)
+                player.hit(enemy)
+            else:
+                print("Способность использована неудачно. Вы уменьшили свой урон")
+                self.hp -=  
+
+
 print(tor.greeting())
 
 print(tor.greeting())
